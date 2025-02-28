@@ -1,0 +1,196 @@
+/* Basic Reset & Body Styles */
+html, body, ul, li, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: "Atkinson Hyperlegible Mono", Courier, monospace;
+  line-height: 1.4;
+}
+
+/* Wrapper to center content and set max width */
+.wrapper {
+  max-width: 33vw;
+  margin: 0 auto;
+  padding: 0 1rem; /* Left/right padding inside the centered column */
+}
+
+/* Layout */
+header, footer {
+  background-color: white;
+  padding: 1rem;
+}
+
+footer {
+  font-size:.8em;
+  display:block;
+  text-align: left;
+}
+
+main {
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Tooltip Container */
+.tooltip {
+  position: relative;       /* Establish a containing block for positioning */
+  cursor: default;             /* Indicate a helpful tooltip is available */
+  text-decoration: bold;/* Optional: visual hint for a tooltip */
+}
+
+/* Tooltip Text (hidden by default) */
+.tooltip::after {
+  content: attr(data-tooltip); /* Use the data-tooltip attribute value */
+  position: absolute;          /* Position it relative to the .tooltip element */
+  left: 50%;
+  bottom: 120%;                   /* Slightly below the text */
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  opacity: 0;                  /* Hidden by default */
+  pointer-events: none;        /* Makes the tooltip ignore mouse events */
+  transition: opacity 0.3s ease;
+  z-index: 999;                /* Ensure it appears on top of other elements */
+}
+
+/* Show tooltip on hover */
+.tooltip:hover::after {
+  opacity: 1;
+  pointer-events: auto;  /* Now hoverable, if you want the user to copy text, etc. */
+}
+
+/* Navigation/Lists */
+ul {
+  list-style-type: "- ";
+  padding-left: 2rem; /* Indent bullet points slightly */
+  margin-top: 1rem;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color:white;
+  background-color:blue;
+}
+
+/* Footer */
+footer p {
+  font-size: 0.875rem;
+  text-align:center;
+}
+
+/* -- Dark Mode Styles -- */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #e0e0e0;
+}
+
+body.dark-mode a:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Dark Mode: Tooltip Override */
+body.dark-mode .tooltip::after {
+  background-color: lightgray; /* Slightly lighter than #333 so it’s visible */
+  color: black;            /* White text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  main {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  .wrapper{
+    max-width: 80vw;
+  }
+
+  header, footer {
+    padding: 0.5rem;
+  }
+}
+
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
