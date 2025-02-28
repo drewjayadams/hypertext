@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
   if (savedDarkMode === "true") {
     document.body.classList.add("dark-mode");
     if (toggleLink) {
-      toggleLink.textContent = "Light Mode";
+      toggleLink.textContent = "light Mode";
     }
   } else {
     document.body.classList.remove("dark-mode");
     if (toggleLink) {
-      toggleLink.textContent = "Dark Mode";
+      toggleLink.textContent = "dark Mode";
     }
   }
 
@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("darkMode", "true");
-        toggleLink.textContent = "Light Mode";
+        toggleLink.textContent = "light Mode";
       } else {
         localStorage.setItem("darkMode", "false");
-        toggleLink.textContent = "Dark Mode";
+        toggleLink.textContent = "dark Mode";
       }
     });
   }
